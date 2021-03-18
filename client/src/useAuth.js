@@ -9,7 +9,7 @@ const useAuth = (code) => {
     // effect hook for login
     useEffect(() => {
         axios
-        .post('http://localhost:3001/login', {
+        .post('https://spotify-lite-back.herokuapp.com/login', {
             code,
         })
         .then(res => {
@@ -27,7 +27,7 @@ const useAuth = (code) => {
 
         const expiration = setInterval(() => {
             axios
-            .post('http://localhost:3001/refresh', {
+            .post('https://spotify-lite-back.herokuapp.com/refresh', {
             refreshToken,
             })
             .then(res => {
